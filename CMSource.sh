@@ -21,11 +21,11 @@ clear
 
         echo -e "${bldred}                                 "
         echo -e "${bldred}   ----------------------------- "
-        echo -e "${bldred}   |    ${bldnormal}Auto-instalador CM     ${bldred}| "
+        echo -e "${bldred}   |    ${bldnormal}Auto-installation CM     ${bldred}| "
         echo -e "${bldred}   |                           | "
-        echo -e "${bldred}   | ${bldnormal}Descargando código fuente ${bldred}| "
+        echo -e "${bldred}   | ${bldnormal}Downloading source code ${bldred}| "
         echo -e "${bldred}   |                           | "
-        echo -e "${bldred}   |   ${bldnormal}Configurando tu equipo  ${bldred}| "
+        echo -e "${bldred}   |   ${bldnormal}Setting up your computer  ${bldred}| "
         echo -e "${bldred}   ----------------------------  "
 
 tput setaf 2
@@ -33,9 +33,9 @@ tput setaf 2
 	cd ~/android/system
 	
   # Initial git config
-	echo "Introduce tu correo electrónico de Github: "
+	echo "Enter your email address of Github: "
 	read input_email
-	echo "Introduce un usuario para tus commits en Github: "
+	echo "Enter a user of your commits on Github: "
 	read input_user
 	git config --global user.email "$input_email"
 	git config --global user.name "$input_user"
@@ -51,25 +51,9 @@ clear
   echo "  2 - CyanogenMod 12.1"
   echo "  3 - CyanogenMod 13.0"
   echo "  4 - CyanogenMod 14.0"
-  echo 
-  echo "============================================================"
-  echo " Tambien puedes elegir"
-  echo " nuestra versión temasek"
-  echo "============================================================"
-  echo 
-  echo "  5 - CyanogenMod Temasek 12.0"
-  echo "  6 - CyanogenMod Temasek 12.1"
-  echo "  7 - CyanogenMod Temasek 13.0"
-  echo 
-  echo "============================================================"
-  echo " Alternativamente, puedes elegir"
-  echo " nuestra versión ferhung-mtk"
-  echo "============================================================"
+  echo "  5 - CyanogenMod 14.1"
   echo
-  echo "  8 - CyanogenMod ferhung-mtk 13.0"
-  echo "  9 - CyanogenMod ferhung-mtk 14.0"
-  echo
-  echo -n "Introduce una opción: "
+  echo -n "Enter an option: "
   read opt
 
   if [ "$?" != "1" ]
@@ -79,28 +63,24 @@ clear
       2) repo init -u git://github.com/CyanogenMod/android.git -b cm-12.1;;
       3) repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0;;
       4) repo init -u git://github.com/CyanogenMod/android.git -b cm-14.0;;
-      5) repo init -u git://github.com/temasek/android.git -b cm-12.0;;
-      6) repo init -u git://github.com/temasek/android.git -b cm-12.1;;
-      7) repo init -u git://github.com/trader418/android.git -b cm-13.0;;
-      8) repo init -u git://github.com/ferhung-mtk/android.git -b cm-13.0;;
-      9) repo init -u git://github.com/ferhung-mtk/android.git -b cm-14.0;;
+      5) repo init -u git://github.com/CyanogenMod/android.git -b cm-14.1;;
     esac
   fi
 
   # First sync
 	time repo sync --force-broken --force-sync -j4
 	echo  
-	echo -e "${bldcya}El source de CM fue descargado en ~/android/system"
-	echo -e "${bldcya}Puedes compilar CM en la ubicación ~/android/system"
-	echo -e "${bldcya}Recuerda hacer ${bldgrn}ccache -M 40 ${bldcya}para poner 40gb de cache, antes de empezar tu primera build :)" 
+	echo -e "${bldcya}The CM source was downloaded in ~/android/system"
+	echo -e "${bldcya}You can compile CM in the location ~/android/system"
+	echo -e "${bldcya}Remember to do ${bldgrn}ccache -M 40 ${bldcya}to put 40gb cache, before starting your first build :)" 
 	mkdir ~/android/system/.repo/local_manifests
 	echo "<?xml version="1.0" encoding="UTF-8"?>" >> ~/android/system/.repo/local_manifests/roomservice.xml
 	echo "<manifest>" >> ~/android/system/.repo/local_manifests/roomservice.xml
 	echo "</manifest>" >> ~/android/system/.repo/local_manifests/roomservice.xml
         echo -e "${bldred}   -------------------------------------------------- "
-        echo -e "${bldred}   |  No te olvides de descargar el código fuente   | "
+        echo -e "${bldred}   |   Do not forget to download the source code    | "
         echo -e "${bldred}   |                                                | "
-        echo -e "${bldred}   |     para tu dispositivo antes de compilar.     | "
+        echo -e "${bldred}   |       for your device before compiling.        | "
         echo -e "${bldred}   |                                                | "
         echo -e "${bldred}   -------------------------------------------------- "
 exit
