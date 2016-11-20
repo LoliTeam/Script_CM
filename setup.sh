@@ -21,24 +21,24 @@ clear
 
         echo -e "${bldred}                                 "
         echo -e "${bldred}   ----------------------------- "
-        echo -e "${bldred}   |    ${bldnormal}Auto-instalador CM     ${bldred}| "
+        echo -e "${bldred}   |    ${bldnormal}Auto-installation CM     ${bldred}| "
         echo -e "${bldred}   |                           | "
-        echo -e "${bldred}   | ${bldnormal}Descargando código fuente ${bldred}| "
+        echo -e "${bldred}   | ${bldnormal}Downloading source code ${bldred}| "
         echo -e "${bldred}   |                           | "
-        echo -e "${bldred}   |   ${bldnormal}Configurando tu equipo  ${bldred}| "
+        echo -e "${bldred}   |   ${bldnormal}Setting up your computer  ${bldred}| "
         echo -e "${bldred}   ----------------------------  "
 
 tput setaf 3
 	sleep 1
 	echo  
-	echo Actualizando lista de paquetes...
+	echo Updating package list ...
 	echo  
 	sleep 3
 tput setaf 2
 	time sudo apt-get update
 tput setaf 3
 	echo  
-	echo Instalando paquetes necesarios...
+	echo Installing required packages ...
 	echo  
 	sleep 3
 tput setaf 2
@@ -51,7 +51,7 @@ libcap-dev autoconf libgmp-dev pkg-config libmpc-dev libmpfr-dev lzma* \
 liblzma* w3m phablet-tools android-tools-adb screen maven tmux
 tput setaf 3
 	echo  
-	echo Instalando y configurando ccache
+	echo Installing and configuring ccache
 	echo 
 tput setaf 2 	
 	git clone https://github.com/ccache/ccache.git -b master
@@ -63,7 +63,7 @@ tput setaf 2
 	echo "export USE_CCACHE=1" >> ${HOME}/.bashrc
 	echo  
 tput setaf 3
-	echo Descargando repo, si esta instalado se actualizara...
+	echo Downloading repo, if installed will be updated ...
 tput setaf 2
 	cd ..
 	echo  
@@ -75,7 +75,7 @@ tput setaf 2
 clear
 tput setaf 3
 	echo  
-	echo -e "${bldcya}Para continuar la instalación ejecuta ${bldred}CMSource.sh "
+	echo -e "${bldcya}To continue the installation, run ${bldred}CMSource.sh "
 	echo  
 	sleep 5
 tput setaf 2
