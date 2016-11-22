@@ -44,7 +44,7 @@ clear
 
   # CM version selection
   echo "============================================================"
-  echo " Elige tu versión de CM"
+  echo " Choose your version of CM"
   echo "============================================================"
   echo 
   echo "  1 - CyanogenMod 12.0"
